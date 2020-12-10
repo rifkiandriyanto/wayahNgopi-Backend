@@ -92,7 +92,7 @@ module.exports = {
           updated: new Date()
         }
         const result = await userModel.register(data)
-        helpers.response(response, 200, data)
+        helpers.response(response, 200, data, result)
       } const data = {
         name: request.body.name,
         image: `${IP}:${port}/uploads/${request.file.filename}`,
@@ -106,7 +106,7 @@ module.exports = {
         updated: new Date()
       }
       const result = await userModel.register(data)
-      helpers.response(response, 200, data)
+      helpers.response(response, 200, data, result)
     } catch (error) {
       helpers.customErrorResponse(
         response,
